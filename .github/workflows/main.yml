@@ -14,7 +14,8 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies
-        run: pip install -r requirements.txt
+       run: pip install -upgrade pip
+       run: pip install -r requirements.txt
       - name: Deploy to Elastic Beanstalk
         run: |
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
